@@ -1,0 +1,21 @@
+repositories {
+  google()
+  jcenter()
+  maven {
+      url "http://mobile.maven.couchbase.com/maven2/dev/"
+  }
+}
+
+dependencies {
+    compile "com.couchbase.lite:couchbase-lite-android:2.1.2"
+    compile "com.google.code.gson:gson:2.8.5"
+}
+
+android {
+
+    packagingOptions {
+        exclude 'METAmusic-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
