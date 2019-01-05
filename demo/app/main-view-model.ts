@@ -18,7 +18,7 @@ export class HelloWorldModel extends Observable {
     super();
 
 
-    this.message = "Nativescriptcouchbaselite plugin test";
+    this.message = "nativescript-couchbaselite-xl plugin test";
     this.cbliteXl = new CbliteXl("testdatabase");
 
     this.cbliteXl = new CbliteXl("mydatabase");
