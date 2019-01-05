@@ -112,7 +112,6 @@ this.cbliteXl.deleteDocument(id);
 ```
 
 ## Going further
-For more information about how to use couchbase-lite-android using this plugin:
-you can read the documenation of the couchbase-lite-android lib here:
+For more information about how to use couchbase-lite using this plugin, you can read the lib documentation here:
 https://docs.couchbase.com/couchbase-lite/2.1/java.html#getting-started
 
