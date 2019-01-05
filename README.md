@@ -4,8 +4,7 @@ Currently, the plugin is only available for android. However, we plan to impleme
 
 
 # Installation
-To install the plugin you can do the following steps:
-  * Go to the root directory of your nativescript project and type the following command
+To install the plugin play the following command from your nativescript project's root directory
      ```
 	tns plugin add nativescript-cblite-xl
      ```
