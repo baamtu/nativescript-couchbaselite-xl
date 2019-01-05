@@ -11,7 +11,7 @@ src/*.d.ts
 !src/scripts/*.js
 !seed-tests/*.js
 !src/platforms/**/*.gradle
-demo/app
+#demo/app
 seed-tests/seed-copy/**/*.*
 seed-tests/seed-copy-new-git-repo/**/*.*
 !demo/karma.conf.js
