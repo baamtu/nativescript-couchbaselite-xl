@@ -29,16 +29,15 @@ import {
   DataSource,
   Ordering
 } from "nativescript-cblite-xl";
-
 ```
 
 ##  Instanciation and database creation
 You can instanciate the library and create database like that:
+
 ```
 this.cbliteXl = new CbliteXl("testdatabase");
 ```
-
-## Document creation
+## Document creation
 
 ```
     let tour = {
