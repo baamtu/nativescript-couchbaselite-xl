@@ -20,7 +20,7 @@ export class CbliteXl extends Common {
     try {
       this.database = new com.couchbase.lite.Database(databaseName, config);
     } catch (exception) {
-      throw new Error("CbliteXl Database creation error: " + exception.message);
+      throw new Error(this.showErroMessage("Database creation error", exception));
     }
   }
 
@@ -32,7 +32,7 @@ export class CbliteXl extends Common {
     try {
       this.database.save(mutableDocument);
     } catch (exception) {
-      throw new Error("CbliteXl Document creation error" + exception.message);
+      throw new Error(this.showErroMessage("Document creation.", exception));
     }
 
     return mutableDocument.getId();
@@ -47,7 +47,7 @@ export class CbliteXl extends Common {
       this.database.delete(document);
     }
     catch(exception) {
-      throw new Error("CbliteXl Document deletion with id " + documentId + " error" + exception.message);
+      throw new Error(this.showErroMessage("Document deletion with id " + documentId + " error", exception));
     }
   }
 
@@ -68,6 +68,36 @@ export class CbliteXl extends Common {
   public mapToObject(data: Object) {
     const gson = new com.google.gson.GsonBuilder().create();
     return JSON.parse(gson.toJson(data));
+  }
+
+  public getAll(query: any) {
+
+    const ret = [];
+    let allResults;
+
+    try {
+        allResults = query.execute().allResults();
+    }
+    catch (exception) {
+      new Error(this.showErroMessage("Cannot execute query", exception));
+    }
+
+    try {
+       const size = allResults.size();
+
+      for (let i = 0; i < size; i++) {
+        ret.push(this.mapToObject(allResults.get(i).toMap()));
+      }
+
+      return ret;
+    }
+    catch (exception) {
+       throw new Error(this.showErroMessage("Cannot fetch query results", exception));
+    }
+  }
+
+  private showErroMessage(message, exception) {
+    return "CbliteXl error: " + message + ".\n" + exception.message;
   }
 
 }
