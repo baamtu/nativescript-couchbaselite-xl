@@ -1,6 +1,6 @@
 {
     "name": "nativescript-cblite-xl",
-    "version": "1.1.4",
+    "version": "1.1.6",
     "description": "Plugins that allows to use the coubbase-lite-android library into nativescript applications",
     "main": "cblite-xl",
     "typings": "index.d.ts",
@@ -42,10 +42,10 @@
         "email": "devsn@baamtu.com"
     },
     "bugs": {
-        "url": "https://github.com/foodige/nativescript-cblite-xl/issues"
+        "url": "https://github.com/baamtu/nativescript-couchbaselite-xl/issues"
     },
     "license": "Apache-2.0",
-    "homepage": "https://github.com/foodige/nativescript-cblite-xl",
+    "homepage": "https://github.com/baamtu/nativescript-couchbaselite-xl/",
     "readmeFilename": "README.md",
     "devDependencies": {
         "tns-core-modules": "^5.1.0",
