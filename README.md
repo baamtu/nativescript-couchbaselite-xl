@@ -1,5 +1,5 @@
 # Description
-CbLiteXl is a plugin that allows access to the [couchbaselite] library. (https://docs.couchbase.com/couchbase-lite/2.1/index.html)
+CbLiteXl is a plugin that allows access to the [couchbaselite](https://docs.couchbase.com/couchbase-lite/2.1/index.html) library. 
 Currently, the plugin is only available for android. However, we plan to implement the IOS version.
 
 
