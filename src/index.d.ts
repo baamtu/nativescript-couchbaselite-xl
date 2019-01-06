@@ -7,6 +7,7 @@ export declare class CbliteXl extends Common {
   objectToMap(data: Object): any;
   mapToJson(data: Object): any;
   mapToObject(data: Object): any;
+  getAll(query: any): any[];
 }
 export declare const SelectResult: any;
 export declare const Meta: any;

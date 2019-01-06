@@ -70,22 +70,11 @@ export class HelloWorldModel extends Observable {
       .orderBy([Ordering.property("data.id").descending()])
       .limit(Expression.intValue(1));
 
-    const allResults = query.execute().allResults();
+    const results = this.cbliteXl.getAll(query);
 
-    try {
-          const size = allResults.size();
-          // We should have only one result
-          console.log("Number of documents:", size);
-
-          // We should display only one result
-          for (let i = 0; i < size; i++) {
-            let obj = this.cbliteXl.mapToObject(allResults
-                .get(i)
-                .toMap());
-            console.log("Obj", obj);
-          }
-        } catch (e) {
-      console.log(e);
-    }
+    // You should have only one result that match the above query
+    results.forEach((result) => {
+      console.log('Result', result);
+    });
   }
 }

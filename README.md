@@ -71,20 +71,12 @@ this.cbliteXl.deleteDocument(id);
       )
       .orderBy([Ordering.property("data.id").descending()])
       .limit(Expression.intValue(1));
-
       
-      let allResults = query.execute().allResults();
+      const results = this.cbliteXl.getAll(query);
 
-      try {
-	      for (let i = 0; i < allResults.size(); i++) {
-		      let obj = this.cbliteXl.mapToObject(allResults.get(i).toMap());
-		      console.log("Obj", obj);
-	      }
-      } catch (e) {
-	      console.log(e);
-      }
-
-
+      results.forEach((result) => {
+        console.log('Result', result);
+      });
 ```
 
 ## Going further
