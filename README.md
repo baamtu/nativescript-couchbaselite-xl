@@ -4,33 +4,10 @@ Currently, the plugin is only available for android. However, we plan to impleme
 
 
 # Installation
-To install the plugin you can do the following steps:
-  * Go to your plugin's src directory. For instance
+To install the plugin play the following command from your nativescript project's root directory
      ```
-	cd nativescript-cblite-xl/src
+	tns plugin add nativescript-cblite-xl
      ```
-  * Installe npm packages like this 
-   ```
-	npm install
-   ```
-  * Go to your plugin's publish directory. For instance 
-    ```
-      cd nativescript-cblite-xl/publish
-     ```
-  * Enter the following command
-
-    ```
-       ./pack.sh
-    ```
-  * Go to your nativescript project's root
-  * Enter the following command:
-    ```
-      tns plugin add PATH_TO_YOUR_PLUGIN/publish/package/nativescript-cblite-xl-1.0.0.tgz
-    ```
-  * You should now be able to use your plugin after running ```tns run android ```
-
-
-
 # How to use
 
 Below some examples of how to use this plugin
@@ -52,16 +29,15 @@ import {
   DataSource,
   Ordering
 } from "nativescript-cblite-xl";
-
 ```
 
 ##  Instanciation and database creation
 You can instanciate the library and create database like that:
+
 ```
 this.cbliteXl = new CbliteXl("testdatabase");
 ```
-
-## Document creation
+## Document creation
 
 ```
     let tour = {
@@ -104,7 +80,6 @@ this.cbliteXl.deleteDocument(id);
 ```
 
 ## Going further
-For more information about how to use couchbase-lite-android using this plugin:
-you can read the documenation of the couchbase-lite-android lib here:
+For more information about how to use couchbase-lite using this plugin, you can read the lib documentation here:
 https://docs.couchbase.com/couchbase-lite/2.1/java.html#getting-started
 

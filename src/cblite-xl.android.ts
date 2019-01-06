@@ -20,7 +20,7 @@ export class CbliteXl extends Common {
     try {
       this.database = new com.couchbase.lite.Database(databaseName, config);
     } catch (exception) {
-      throw new Error(this.showErroMessage("Database creation error", exception));
+      throw new Error(this.showErroMessage("Database creation error.", exception));
     }
   }
 
@@ -47,7 +47,7 @@ export class CbliteXl extends Common {
       this.database.delete(document);
     }
     catch(exception) {
-      throw new Error(this.showErroMessage("Document deletion with id " + documentId + " error", exception));
+      throw new Error(this.showErroMessage("Document deletion with id " + documentId + ".", exception));
     }
   }
 
@@ -79,7 +79,7 @@ export class CbliteXl extends Common {
         allResults = query.execute().allResults();
     }
     catch (exception) {
-      new Error(this.showErroMessage("Cannot execute query", exception));
+      new Error(this.showErroMessage("Cannot execute query.", exception));
     }
 
     try {
@@ -92,12 +92,12 @@ export class CbliteXl extends Common {
       return ret;
     }
     catch (exception) {
-       throw new Error(this.showErroMessage("Cannot fetch query results", exception));
+       throw new Error(this.showErroMessage("Cannot fetch query results.", exception));
     }
   }
 
   private showErroMessage(message, exception) {
-    return "CbliteXl error: " + message + ".\n" + exception.message;
+    return "CbliteXl error: " + message + "\n" + exception.message;
   }
 
 }
