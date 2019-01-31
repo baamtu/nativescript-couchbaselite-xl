@@ -109,4 +109,5 @@ export const QueryBuilder = com.couchbase.lite.QueryBuilder;
 export const DataSource = com.couchbase.lite.DataSource;
 export const Ordering = com.couchbase.lite.Ordering;
 export const Join = com.couchbase.lite.Join;
+export const MutableDocument = com.couchbase.lite.MutableDocument;
 
