@@ -9,6 +9,7 @@ export declare class CbliteXl extends Common {
   mapToJson(data: Object): any;
   mapToObject(data: Object): any;
   getAll(query: any): any[];
+  updateDocument(documentId: any, data: any): void;
   private showErroMessage(message, exception);
 }
 export declare const SelectResult: any;

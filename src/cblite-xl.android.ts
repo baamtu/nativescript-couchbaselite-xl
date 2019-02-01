@@ -96,6 +96,20 @@ export class CbliteXl extends Common {
     }
   }
 
+  public updateDocument(documentId, data) {
+
+    const mutableDocument = new com.couchbase.lite.MutableDocument(documentId);
+    mutableDocument.setData(this.objectToMap(data));
+
+    try {
+      this.database.save(mutableDocument);
+    } catch (exception) {
+      throw new Error(
+        this.showErroMessage("Document update.", exception)
+      );
+    }
+  }
+
   private showErroMessage(message, exception) {
     return "CbliteXl error: " + message + "\n" + exception.message;
   }
