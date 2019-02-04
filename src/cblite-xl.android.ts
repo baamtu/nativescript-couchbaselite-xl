@@ -110,6 +110,18 @@ export class CbliteXl extends Common {
     }
   }
 
+  public getDocument(documentId) {
+    try {
+      const document: any = this.database.getDocument(documentId);
+      return this.mapToObject(document.toMap(document));
+    } catch (exception) {
+      throw new Error(
+        this.showErroMessage("Document fetch (" + documentId + ").", exception)
+      );
+    }
+
+  }
+
   private showErroMessage(message, exception) {
     return "CbliteXl error: " + message + "\n" + exception.message;
   }
@@ -123,5 +135,4 @@ export const QueryBuilder = com.couchbase.lite.QueryBuilder;
 export const DataSource = com.couchbase.lite.DataSource;
 export const Ordering = com.couchbase.lite.Ordering;
 export const Join = com.couchbase.lite.Join;
-export const MutableDocument = com.couchbase.lite.MutableDocument;
 
