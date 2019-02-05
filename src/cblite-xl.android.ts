@@ -113,13 +113,12 @@ export class CbliteXl extends Common {
   public getDocument(documentId) {
     try {
       const document: any = this.database.getDocument(documentId);
-      return this.mapToObject(document.toMap(document));
+      return this.mapToObject(document.toMap());
     } catch (exception) {
       throw new Error(
         this.showErroMessage("Document fetch (" + documentId + ").", exception)
       );
     }
-
   }
 
   private showErroMessage(message, exception) {

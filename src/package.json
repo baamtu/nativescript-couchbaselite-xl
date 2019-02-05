@@ -1,6 +1,6 @@
 {
     "name": "nativescript-cblite-xl",
-    "version": "1.1.10",
+    "version": "1.1.11",
     "description": "Plugins that allows to use the coubbase-lite-android library into nativescript applications",
     "main": "cblite-xl",
     "typings": "index.d.ts",

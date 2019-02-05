@@ -53,6 +53,9 @@ export class HelloWorldModel extends Observable {
     tour.data.nested.attr = 5;
     id = this.cbliteXl.createDocument(tour);
 
+
+    console.log('Get document', this.cbliteXl.getDocument(id));
+
     this.cbliteXl.deleteDocument(id);
 
     const query = QueryBuilder.select([SelectResult.all()])
@@ -70,11 +73,27 @@ export class HelloWorldModel extends Observable {
       .orderBy([Ordering.property("data.id").descending()])
       .limit(Expression.intValue(1));
 
-    const results = this.cbliteXl.getAll(query);
+
+    let values = [Expression.intValue(parseInt("5")];
+    console.log(values);
+
+    let ids = [5];
+    let inIds = ids.map((id) => Expression.intValue(id));
+
+
+    const query1 = QueryBuilder.select([
+      SelectResult.all()
+    ]).from(DataSource.database(this.cbliteXl.getDatabase()))
+       .where(
+        Expression.property("data.id").in(inIds));
+
+    console.log(query1);
+
+    const results = this.cbliteXl.getAll(query1);
 
     // You should have only one result that match the above query
     results.forEach((result) => {
-      console.log('Result', result);
+      console.log('Resultat', result);
     });
   }
 }
