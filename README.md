@@ -49,10 +49,26 @@ this.cbliteXl = new CbliteXl("testdatabase");
     console.log("This is your documentId", documentId);	
 ```
 
+## Document fetching
+
+```
+    let tour = his.cbliteXl.getDocument(documentId);
+
+    console.log("This is your document", tour);	
+```
+## Document update
+
+```
+    let tour = this.cbliteXl.getDocument(documentId);
+    tour.data.nested.attr = 6;
+
+    this.cbliteXl.updateDocument(tour);
+```
+
 ## Document deletion
 
 ```
-this.cbliteXl.deleteDocument(id);
+this.cbliteXl.deleteDocument(documentId);
 ```
 
 ## Querying
